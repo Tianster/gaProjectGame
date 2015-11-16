@@ -49,37 +49,25 @@ var Deck = (function () {
         card.displayCard();
       });
     }
+  }, {
+    key: 'shuffleDeck',
+    value: function shuffleDeck() {
+      for (var j = 0; j < 10; j++) {
+        for (var i = 0; i < this.cards.length; i++) {
+          var randomNum = Math.floor(Math.random() * 52);
+          var temp = this.cards[i]; // i respresent index of our array.
+          this.cards[i] = this.cards[randomNum];
+          this.cards[randomNum] = temp;
+        }
+      }
+    }
   }]);
 
   return Deck;
 })();
 
-var cherylDeck = new Deck();
-var tiansDeck = new Deck();
-tiansDeck.displayDeck();
-
-//var Deck = new Array [] // this array has 52 Cards */
-
-// var cardsInDeck = new Array ()
-// var numberOfCardsInDeck = 5
-//   cardsInDeck[0] = 'AceHearts';
-//   cardsInDeck[1] = 'Clubs2';
-//   cardsInDeck[2] = 'ClubAce';
-//   cardsInDeck[3] = 'DiamondsKing';
-//   cardsInDeck[4] = 'SpadesJack';
-//
-//   function randomCard () {
-//     return Math.floor(Math.random() * numberOfCardsInDeck)
-//   }
-//   function removeCard (c) {
-//     for(j=c; j <= numberOfCardsInDeck -2; j++) {
-//       cardsInDeck[j] = cardsInDeck [j + 1]
-//     }
-//     numberOfCardsInDeck-- ;
-//   }
-//   function dealCard(i) {
-//     if(numberOfCardsInDeck === 0) return false;
-//     removeCard(i);
-//   }
+var shuffledDeck = new Deck();
+shuffledDeck.shuffleDeck();
+shuffledDeck.displayDeck();
 
 },{}]},{},[1]);
