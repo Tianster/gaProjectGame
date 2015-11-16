@@ -4,8 +4,6 @@ var ranks = ['A', '2', '3', '4', '5',
             'J', 'Q', 'K']
 var suits = ['Black-Spade', 'Red-Heart',
              'Club-Black', 'Diamond-Red']
-
-
 class Card {
   constructor (rank, suit) {
     this.rank = rank
@@ -17,12 +15,24 @@ class Card {
 }
 
 class Deck {
-  constructor (rank, suits) {
-    this.card = rank + ' ' + suits
+  constructor () {
+    this.cards = []
+    suits.forEach(suit => {
+      ranks.forEach(rank => {
+        var card = new Card(rank, suit)
+        this.cards.push(card)
+      })
+    })
+  }
+  displayDeck () {
+    this.cards.forEach(card => {
+      card.displayCard()
+    })
   }
 }
-
-console.log("es6 working")
+var cherylDeck = new Deck()
+var tiansDeck = new Deck()
+tiansDeck.displayDeck()
 
 //var Deck = new Array [] // this array has 52 Cards */
 

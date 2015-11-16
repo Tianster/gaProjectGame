@@ -27,13 +27,36 @@ var Card = (function () {
   return Card;
 })();
 
-var Deck = function Deck(rank, suits) {
-  _classCallCheck(this, Deck);
+var Deck = (function () {
+  function Deck() {
+    var _this = this;
 
-  this.card = rank + ' ' + suits;
-};
+    _classCallCheck(this, Deck);
 
-console.log("es6 working");
+    this.cards = [];
+    suits.forEach(function (suit) {
+      ranks.forEach(function (rank) {
+        var card = new Card(rank, suit);
+        _this.cards.push(card);
+      });
+    });
+  }
+
+  _createClass(Deck, [{
+    key: 'displayDeck',
+    value: function displayDeck() {
+      this.cards.forEach(function (card) {
+        card.displayCard();
+      });
+    }
+  }]);
+
+  return Deck;
+})();
+
+var cherylDeck = new Deck();
+var tiansDeck = new Deck();
+tiansDeck.displayDeck();
 
 //var Deck = new Array [] // this array has 52 Cards */
 
