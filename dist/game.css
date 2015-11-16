@@ -1,52 +1,53 @@
 body {
   background-color: skyblue;
 }
-#banner {
-  display: inline-block;
-  margin-left: 50%;
-  height: 50px;
-  width: 100px;
-  color: blue;
-  border: 5px solid white;
+.banner {
+    font-size: 40px;
+    width: 50%;
+    margin: 0 auto;
+    color: black;
+    border: 3px solid white;
+    text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: row;
 }
 .deckCard {
-  width: 250px;
-  height: 250px;
-  border: 5px solid white;
+  width: 20%;
+  margin: 0 auto;
+  height: 300px;
+  border: 2px solid white;
 }
 #mainDeck {
   color: black;
   font-size: 25px;
 }
-#cardNumberMD {
-  width: 115px;
-  height: 240px;
-  color: black;
-}
-#cardShapeMD {
-  width: 115px;
-  height: 240px;
-  color: white;
-}
-
 #openDeck {
-display: inline-flex;
+  display: inline-flex;
   color: black;
   font-size: 25px;
 }
 .scoreBoard {
-  font-size: 25px;
-  color: black;
-  border-style: solid black;
   display: flex;
   flex-direction: row;
-  text-align: center;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+}
+#director, #color, #higher,
+#lower, #red, #black {
+  font-size: 15px;
+  background-color: green;
+  width: 15%;
+  height: 25px;
 }
 .playerScore {
-  display:inline-block;
-  border: 5px solid white;
-  height: 80px;
-  width: 80px;
+  width: 20%;
+  margin: 0 auto;
+  height: 150px;
+  border: 2px solid white;
 }
 #p1 {
   color: grey;

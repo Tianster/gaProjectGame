@@ -5,9 +5,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Create the 52 deck of Cards
 var ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red'];
+var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red']; // Create the 52 deck of Cards
 
 var Card = (function () {
   function Card(rank, suit) {
@@ -53,6 +52,7 @@ var Deck = (function () {
     key: 'shuffleDeck',
     value: function shuffleDeck() {
       for (var j = 0; j < 10; j++) {
+        // loop this shuffle 10 times
         for (var i = 0; i < this.cards.length; i++) {
           var randomNum = Math.floor(Math.random() * 52);
           var temp = this.cards[i]; // i respresent index of our array.
@@ -61,6 +61,13 @@ var Deck = (function () {
         }
       }
     }
+  }, {
+    key: 'dealDeck',
+    value: function dealDeck() {
+      if (this.cards.length > 0) {
+        return this.cards.shift(); // Shift is array helper method
+      } else return null;
+    }
   }]);
 
   return Deck;
@@ -68,6 +75,12 @@ var Deck = (function () {
 
 var shuffledDeck = new Deck();
 shuffledDeck.shuffleDeck();
-shuffledDeck.displayDeck();
+
+// myCard.displayCard()
+var body = document.querySelector('body');
+body.addEventListener('click', function (event) {
+  var myCard = shuffledDeck.dealDeck();
+  myCard.displayCard();
+});
 
 },{}]},{},[1]);
