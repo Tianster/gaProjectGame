@@ -1,0 +1,58 @@
+body {
+  background-color: skyblue;
+}
+#banner {
+  display: inline-block;
+  margin-left: 50%;
+  height: 50px;
+  width: 100px;
+  color: blue;
+  border: 5px solid white;
+}
+.deckCard {
+  width: 250px;
+  height: 250px;
+  border: 5px solid white;
+}
+#mainDeck {
+  color: black;
+  font-size: 25px;
+}
+#cardNumberMD {
+  width: 115px;
+  height: 240px;
+  color: black;
+}
+#cardShapeMD {
+  width: 115px;
+  height: 240px;
+  color: white;
+}
+
+#openDeck {
+display: inline-flex;
+  color: black;
+  font-size: 25px;
+}
+.scoreBoard {
+  font-size: 25px;
+  color: black;
+  border-style: solid black;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.playerScore {
+  display:inline-block;
+  border: 5px solid white;
+  height: 80px;
+  width: 80px;
+}
+#p1 {
+  color: grey;
+  background-color: black;
+}
+#p2 {
+  color: red;
+  background-color: yellow;
+}

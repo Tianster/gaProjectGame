@@ -1,0 +1,40 @@
+{
+  "name": "cardgame",
+  "version": "1.0.0",
+  "description": "Project Game for GA WDI = Color-me-Up # Game Des: - 2 player-card game with P1 and P2. - 1 full deck of 52 cards. (div) - After first card been dealt, P2 will decide whether P1 will speculate on 2 scenarios:   1. Color of the next card (black || red)   2. Direction < || > than the first card. - ** (Optional) Calculate and post the two probabilities on the screen so that P2 can decide. - once the P2 has decided, P1 will decide on his/her choice:   If asked to choose Color, then P1 to decide on Red || Black. (create buttons)   Or Direction, then P1 decide Higher || lower. (create buttons) - Deal the next card, and the result is according to either the Color or direction winning logic. - Players each will score 1 point for guessing correctly. First to reach 10 will win.  (Banner) - If any player draws a same number, regardless of color, the player automatically loses 2 points.",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "start": "npm run build && npm run start-server",
+    "start-server": "http-server dist",
+    "build": "npm run clean && mkdir dist && npm run build-html && npm run build-css && npm run build-js",
+    "build-html": "cp game/index.html dist/index.html",
+    "build-css": "cp game/game.css dist/game.css",
+    "build-js": "browserify game/game.js --outfile dist/game.js --transform babelify",
+    "watch": "npm run build && npm run watch-js & npm run watch-css & npm run watch-html & npm run start-server",
+    "watch-html": "watch-spawn -p 'game/index.html' npm run build-html",
+    "watch-css": "watch-spawn --pattern 'game/game.css' npm run build-css",
+    "watch-js": "watchify game/game.js --outfile dist/game.js --transform babelify --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tianster/gaProjectGame.git"
+  },
+  "author": "Tianster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tianster/gaProjectGame/issues"
+  },
+  "homepage": "https://github.com/Tianster/gaProjectGame#readme",
+  "dependencies": {
+    "babel": "^6.0.15",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-stage-0": "^6.1.2",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "http-server": "^0.8.5",
+    "watch-spawn": "^1.0.6",
+    "watchify": "^3.6.1"
+  }
+}
