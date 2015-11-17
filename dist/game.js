@@ -78,20 +78,29 @@ var Deck = (function () {
 
 var shuffledDeck = new Deck();
 shuffledDeck.shuffleDeck();
+var currentCard;
+var tempCard; // housing the dealt card
 // myCard.displayCard()
+// Event listener: Deal
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
   var deal = event.target;
   if (deal.id !== 'deal') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
+  dealCard = currentCard;
+  currentCard = tempCard;
+  console.log(tempCard);
 });
+// Event listener: Direction
 body.addEventListener('click', function (event) {
   var direction = event.target;
   if (direction.id !== 'higherP1') return;
-  console.log('higherP1');
-  // var dealCard = shuffledDeck.dealDeck()
-  // dealCard.displayCard()
+  var dealCard = shuffledDeck.dealDeck();
+  dealCard.displayCard();
 });
+
+// var dealCard = shuffledDeck.dealDeck()
+// dealCard.displayCard()
 
 },{}]},{},[1]);
