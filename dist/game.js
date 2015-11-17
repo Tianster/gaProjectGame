@@ -44,6 +44,7 @@ var Deck = (function () {
   _createClass(Deck, [{
     key: 'displayDeck',
     value: function displayDeck() {
+      // this is a method
       this.cards.forEach(function (card) {
         card.displayCard();
       });
@@ -51,11 +52,12 @@ var Deck = (function () {
   }, {
     key: 'shuffleDeck',
     value: function shuffleDeck() {
+      // this is a method
       for (var j = 0; j < 10; j++) {
         // loop this shuffle 10 times
         for (var i = 0; i < this.cards.length; i++) {
           var randomNum = Math.floor(Math.random() * 52);
-          var temp = this.cards[i]; // i respresent index of our array.
+          var temp = this.cards[i]; // i represent index of our array.
           this.cards[i] = this.cards[randomNum];
           this.cards[randomNum] = temp;
         }
@@ -64,6 +66,7 @@ var Deck = (function () {
   }, {
     key: 'dealDeck',
     value: function dealDeck() {
+      // this is a method
       if (this.cards.length > 0) {
         return this.cards.shift(); // Shift is array helper method
       } else return null;
@@ -75,12 +78,12 @@ var Deck = (function () {
 
 var shuffledDeck = new Deck();
 shuffledDeck.shuffleDeck();
-
 // myCard.displayCard()
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
   var myCard = shuffledDeck.dealDeck();
-  myCard.displayCard();
+
+  // myCard.displayCard()
 });
 
 },{}]},{},[1]);

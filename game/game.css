@@ -16,7 +16,7 @@ body {
 .deckCard {
   width: 20%;
   margin: 0 auto;
-  height: 300px;
+  height: 150px;
   border: 2px solid white;
 }
 #mainDeck {
@@ -35,8 +35,21 @@ body {
 .buttonContainer {
   display: flex;
   flex-direction: row;
+  border: 2px solid white;
 }
-#director, #color, #higher,
+.containerP1 {
+  width: 20%;
+  margin: 0 auto;
+  height: 200px;
+  border: 2px solid white;
+}
+.containerP2 {
+  width: 20%;
+  margin: 0 auto;
+  height: 200px;
+  border: 2px solid white;
+}
+#direction, #color, #higher,
 #lower, #red, #black {
   font-size: 15px;
   background-color: green;
