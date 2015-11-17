@@ -9,10 +9,9 @@ class Card {
     this.suit = suit
   }
   displayCard () {
-    console.log(this.rank + ' ' + this.suit)
+    document.getElementById('openDeck').textContent = (this.rank + ' ' + this.suit)
   }
 }
-
 class Deck {
   constructor () {
     this.cards = []
@@ -49,7 +48,8 @@ shuffledDeck.shuffleDeck()
 // myCard.displayCard()
 var body = document.querySelector('body')
 body.addEventListener('click', event => {
+  var openDeck = event.target
+  if (openDeck.id !== 'openDeck') return
   var myCard = shuffledDeck.dealDeck()
-
-  // myCard.displayCard()
+  myCard.displayCard()
 })

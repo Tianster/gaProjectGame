@@ -19,7 +19,7 @@ var Card = (function () {
   _createClass(Card, [{
     key: 'displayCard',
     value: function displayCard() {
-      console.log(this.rank + ' ' + this.suit);
+      document.getElementById('openDeck').textContent = this.rank + ' ' + this.suit;
     }
   }]);
 
@@ -81,9 +81,10 @@ shuffledDeck.shuffleDeck();
 // myCard.displayCard()
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
+  var openDeck = event.target;
+  if (openDeck.id !== 'openDeck') return;
   var myCard = shuffledDeck.dealDeck();
-
-  // myCard.displayCard()
+  myCard.displayCard();
 });
 
 },{}]},{},[1]);
