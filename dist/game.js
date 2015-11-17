@@ -81,10 +81,17 @@ shuffledDeck.shuffleDeck();
 // myCard.displayCard()
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
-  var openDeck = event.target;
-  if (openDeck.id !== 'openDeck') return;
-  var myCard = shuffledDeck.dealDeck();
-  myCard.displayCard();
+  var deal = event.target;
+  if (deal.id !== 'deal') return;
+  var dealCard = shuffledDeck.dealDeck();
+  dealCard.displayCard();
+});
+body.addEventListener('click', function (event) {
+  var direction = event.target;
+  if (direction.id !== 'higherP1') return;
+  console.log('higherP1');
+  // var dealCard = shuffledDeck.dealDeck()
+  // dealCard.displayCard()
 });
 
 },{}]},{},[1]);
