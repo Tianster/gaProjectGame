@@ -5,7 +5,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red']; // Create the 52 deck of Cards
 
 var Card = (function () {
@@ -79,7 +79,8 @@ var Deck = (function () {
 var shuffledDeck = new Deck();
 shuffledDeck.shuffleDeck();
 var currentCard;
-var tempCard; // housing the dealt card
+var currentPlayer = '1';
+var previousCard; // housing the dealt card
 // myCard.displayCard()
 // Event listener: Deal
 var body = document.querySelector('body');
@@ -88,9 +89,10 @@ body.addEventListener('click', function (event) {
   if (deal.id !== 'deal') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
-  dealCard = currentCard;
-  currentCard = tempCard;
-  console.log(tempCard);
+  if (currentPlayer === '1') {
+    document.getElementById('instruction').textContent = 'Click on Higher or Lower';
+  }
+  // currentCard = dealCard
 });
 // Event listener: Direction
 body.addEventListener('click', function (event) {
@@ -98,8 +100,17 @@ body.addEventListener('click', function (event) {
   if (direction.id !== 'higherP1') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
+  previousCard = currentCard;
+  currentCard = dealCard;
+  console.log(currentCard);
+  console.log(previousCard);
+  console.log(dealCard);
+  console.log(ranks.indexOf(currentCard.rank));
+  console.log(ranks.indexOf(previousCard.rank));
+  if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
+    console.log('p1 scores');
+  } else console.log('p2 turn');
 });
-
 // var dealCard = shuffledDeck.dealDeck()
 // dealCard.displayCard()
 
