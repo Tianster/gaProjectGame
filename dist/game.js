@@ -77,11 +77,12 @@ var Deck = (function () {
 })();
 
 var shuffledDeck = new Deck();
-shuffledDeck.shuffleDeck();
+// shuffledDeck.shuffleDeck()
 var currentCard;
 var currentPlayer = '1';
-var previousCard; // housing the dealt card
-// myCard.displayCard()
+var previousCard;
+var score1 = 0;
+var score2 = 0;
 // Event listener: Deal
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
@@ -89,15 +90,36 @@ body.addEventListener('click', function (event) {
   if (deal.id !== 'deal') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
-  if (currentPlayer === '1') {
-    document.getElementById('instruction').textContent = 'Click on Higher or Lower';
-  }
-  // currentCard = dealCard
+  currentCard = dealCard;
+  currentPlayer = '2';
+  document.getElementById('instruction').textContent = currentPlayer + ' pick Higher or Lower';
 });
-// Event listener: Direction
+// Event listener: Direction Higher
 body.addEventListener('click', function (event) {
   var direction = event.target;
   if (direction.id !== 'higherP1') return;
+  var dealCard = shuffledDeck.dealDeck();
+  dealCard.displayCard();
+  previousCard = currentCard;
+  currentCard = dealCard;
+  document.getElementById('instruction').textContent = currentPlayer + ' pick Higher or Lower';
+  if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
+    if (currentPlayer === '1') {
+      score1 = score1 + 1;
+      document.getElementById('p1').textContent = score1;
+      console.log(currentPlayer + ' wins');
+    } else {
+      score2 = score2 + 1;
+      console.log(currentPlayer + 'wins');
+      document.getElementById('p2').textContent = score2;
+    }
+  }
+  currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+});
+// Event listener: Direction Lower
+body.addEventListener('click', function (event) {
+  var direction = event.target;
+  if (direction.id !== 'lowerP1') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
   previousCard = currentCard;
@@ -107,7 +129,7 @@ body.addEventListener('click', function (event) {
   console.log(dealCard);
   console.log(ranks.indexOf(currentCard.rank));
   console.log(ranks.indexOf(previousCard.rank));
-  if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
+  if (ranks.indexOf(currentCard.rank) < ranks.indexOf(previousCard.rank)) {
     console.log('p1 scores');
   } else console.log('p2 turn');
 });

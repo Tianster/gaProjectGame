@@ -80,10 +80,16 @@ body {
 #p1 {
   color: grey;
   background-color: black;
+  font-style: normal;
+  font-size: 120px;
+  text-align: center;
 }
 #p2 {
   color: red;
   background-color: yellow;
+  font-style: normal;
+  font-size: 120px;
+  text-align: center;
 }
 #instruction{
   width: 50%;
