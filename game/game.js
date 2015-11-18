@@ -11,9 +11,6 @@ class Card {
   displayCard () {
     document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
   }
-  // displayPreviousCard () {
-  //   document.getElementById('openDeck').textContent = (this.rank + ' ' + this.suit)
-  // }
 }
 class Deck {
   constructor () {
@@ -25,12 +22,12 @@ class Deck {
       })
     })
   }
-  displayDeck () {// this is a method
+  displayDeck () {
     this.cards.forEach(card => {
       card.displayCard()
     })
   }
-  shuffleDeck () {// this is a method
+  shuffleDeck () {
     for (var j = 0; j < 10; j++) { // loop this shuffle 10 times
       for (var i = 0; i < this.cards.length; i++) {
         var randomNum = Math.floor(Math.random() * 52)
@@ -66,7 +63,6 @@ function start (event) {
   body.removeEventListener('click', start)
 }
 body.addEventListener('click', start)
-
 // Event listener: Direction Higher
 body.addEventListener('click', event => {
   var direction = event.target
@@ -76,14 +72,12 @@ body.addEventListener('click', event => {
   dealCard.displayCard()
   previousCard = currentCard
   currentCard = dealCard
-  // console.log(currentPlayer)
   if (currentPlayer === '2') {
     if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1
       document.getElementById('p2').textContent = score2
       currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
       document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-      // console.log(currentPlayer + ' wins')
     }
   } else if (currentPlayer === '1') {
     if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
@@ -91,13 +85,18 @@ body.addEventListener('click', event => {
       document.getElementById('p1').textContent = score1
       currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
       document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-      // console.log(currentPlayer + ' wins')
     }
   }
   if (ranks.indexOf(currentCard.rank) < ranks.indexOf(previousCard.rank)) {
     currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
     document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-    console.log(currentPlayer + ' turn')
+  }
+  console.log(score1)
+  console.log(score2)
+  if ((score1 = 5) || (score2 = 5)) {
+    document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!!`
+  } else {
+    document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
   }
 })
 // Event listener: Direction Lower
@@ -109,14 +108,12 @@ body.addEventListener('click', event => {
   dealCard.displayCard()
   previousCard = currentCard
   currentCard = dealCard
-  // console.log(currentPlayer)
   if (currentPlayer === '2') {
     if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1
       document.getElementById('p2').textContent = score2
       currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
       document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-      // console.log(currentPlayer + ' wins')
     }
   } else if (currentPlayer === '1') {
     if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
@@ -124,12 +121,17 @@ body.addEventListener('click', event => {
       document.getElementById('p1').textContent = score1
       currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
       document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-      // console.log(currentPlayer + ' wins')
     }
   }
   if (ranks.indexOf(currentCard.rank) > ranks.indexOf(previousCard.rank)) {
     currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
     document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
-    console.log(currentPlayer + ' turnxxx')
+  }
+  console.log(score1)
+  console.log(score2)
+  if ((score1 = 5) || (score2 = 5)) {
+    document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!!`
+  } else {
+    document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
   }
 })
