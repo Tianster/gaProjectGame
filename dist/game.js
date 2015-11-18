@@ -64,7 +64,6 @@ var Deck = (function () {
   }, {
     key: 'dealDeck',
     value: function dealDeck() {
-      // this is a method
       if (this.cards.length > 0) {
         return this.cards.shift(); // Shift is array helper method
       } else return null;
@@ -107,26 +106,27 @@ body.addEventListener('click', function (event) {
     if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1;
       document.getElementById('p2').textContent = score2;
-      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      if (score2 >= 5) {
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
+      } else {
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      }
     }
   } else if (currentPlayer === '1') {
     if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
       score1 = score1 + 1;
       document.getElementById('p1').textContent = score1;
-      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      if (score1 >= 5) {
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
+      } else {
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      }
     }
   }
   if (ranks.indexOf(currentCard.rank) < ranks.indexOf(previousCard.rank)) {
     currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
-  }
-  console.log(score1);
-  console.log(score2);
-  if ((score1 = 5) || (score2 = 5)) {
-    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
-  } else {
     document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
   }
 });
@@ -143,26 +143,27 @@ body.addEventListener('click', function (event) {
     if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1;
       document.getElementById('p2').textContent = score2;
-      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      if (score2 >= 5) {
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
+      } else {
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      }
     }
   } else if (currentPlayer === '1') {
     if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
       score1 = score1 + 1;
       document.getElementById('p1').textContent = score1;
-      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      if (score1 >= 5) {
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
+      } else {
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      }
     }
   }
   if (ranks.indexOf(currentCard.rank) > ranks.indexOf(previousCard.rank)) {
     currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
-    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
-  }
-  console.log(score1);
-  console.log(score2);
-  if ((score1 = 5) || (score2 = 5)) {
-    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' Wins!!!';
-  } else {
     document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
   }
 });
