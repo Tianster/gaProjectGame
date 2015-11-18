@@ -1,12 +1,16 @@
+/*@import "cards.css"*/
 body {
   background-color: skyblue;
+  /*background: url(http://img3.wikia.nocookie.net/__cb20110731053214/potcoplayers/images/b/be/Rotating_gold_dollar_sign.gif);*/
 }
 .banner {
     font-size: 40px;
     width: 50%;
     margin: 0 auto;
-    color: black;
+    color: white;
+    background-color: black;
     border: 3px solid white;
+    border-image: url(http://www.clker.com/cliparts/t/K/f/F/X/U/glowing-light-bulb-hi.png) 25% 30% 10% 20% repeat;
     text-align: center;
 }
 .container {
@@ -14,18 +18,18 @@ body {
   flex-direction: row;
 }
 .deckCard {
-  width: 20%;
+  width: 150px;
   margin: 0 auto;
   height: 200px;
   border: 2px solid white;
 }
 #deal {
-  color: black;
+  color: white;
   font-size: 25px;
 }
 #openDeck {
   display: inline-flex;
-  color: black;
+  color: white;
   font-size: 25px;
 }
 .scoreBoard {
@@ -97,5 +101,7 @@ body {
   margin: 0 auto;
   border: 2px solid white;
   font-size: 30px;
+  color: white;
+  background-color: black;
   text-align: center;
 }

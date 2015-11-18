@@ -89,7 +89,7 @@ var score1 = 0;
 var score2 = 0;
 // Event listener: Start Game
 var body = document.querySelector('body');
-body.addEventListener('click', function (event) {
+function start(event) {
   var startGame = event.target;
   if (startGame.id !== 'directionP1') return;
   var dealCard = shuffledDeck.dealDeck();
@@ -97,7 +97,10 @@ body.addEventListener('click', function (event) {
   currentCard = dealCard;
   currentPlayer = '2';
   document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
-});
+  body.removeEventListener('click', start);
+}
+body.addEventListener('click', start);
+
 // Event listener: Direction Higher
 body.addEventListener('click', function (event) {
   var direction = event.target;
