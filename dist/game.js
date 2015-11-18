@@ -6,7 +6,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red']; // Create the 52 deck of Cards
+var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red'];
 
 var Card = (function () {
   function Card(rank, suit) {
@@ -19,8 +19,12 @@ var Card = (function () {
   _createClass(Card, [{
     key: 'displayCard',
     value: function displayCard() {
-      document.getElementById('openDeck').textContent = this.rank + ' ' + this.suit;
+      document.getElementById('deal').textContent = this.rank + ' ' + this.suit;
     }
+    // displayPreviousCard () {
+    //   document.getElementById('openDeck').textContent = (this.rank + ' ' + this.suit)
+    // }
+
   }]);
 
   return Card;
@@ -77,63 +81,88 @@ var Deck = (function () {
 })();
 
 var shuffledDeck = new Deck();
-// shuffledDeck.shuffleDeck()
+shuffledDeck.shuffleDeck();
 var currentCard;
 var currentPlayer = '1';
 var previousCard;
 var score1 = 0;
 var score2 = 0;
-// Event listener: Deal
+// Event listener: Start Game
 var body = document.querySelector('body');
 body.addEventListener('click', function (event) {
-  var deal = event.target;
-  if (deal.id !== 'deal') return;
+  var startGame = event.target;
+  if (startGame.id !== 'directionP1') return;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
   currentCard = dealCard;
   currentPlayer = '2';
-  document.getElementById('instruction').textContent = currentPlayer + ' pick Higher or Lower';
+  document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
 });
 // Event listener: Direction Higher
 body.addEventListener('click', function (event) {
   var direction = event.target;
   if (direction.id !== 'higherP1') return;
+  document.getElementById('openDeck').textContent = document.getElementById('deal').textContent;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
   previousCard = currentCard;
   currentCard = dealCard;
-  document.getElementById('instruction').textContent = currentPlayer + ' pick Higher or Lower';
-  if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
-    if (currentPlayer === '1') {
-      score1 = score1 + 1;
-      document.getElementById('p1').textContent = score1;
-      console.log(currentPlayer + ' wins');
-    } else {
+  // console.log(currentPlayer)
+  if (currentPlayer === '2') {
+    if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1;
-      console.log(currentPlayer + 'wins');
       document.getElementById('p2').textContent = score2;
+      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      // console.log(currentPlayer + ' wins')
     }
+  } else if (currentPlayer === '1') {
+      if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
+        score1 = score1 + 1;
+        document.getElementById('p1').textContent = score1;
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+        // console.log(currentPlayer + ' wins')
+      }
+    }
+  if (ranks.indexOf(currentCard.rank) < ranks.indexOf(previousCard.rank)) {
+    currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+    console.log(currentPlayer + ' turn');
   }
-  currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
 });
 // Event listener: Direction Lower
 body.addEventListener('click', function (event) {
   var direction = event.target;
   if (direction.id !== 'lowerP1') return;
+  document.getElementById('openDeck').textContent = document.getElementById('deal').textContent;
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
   previousCard = currentCard;
   currentCard = dealCard;
-  console.log(currentCard);
-  console.log(previousCard);
-  console.log(dealCard);
-  console.log(ranks.indexOf(currentCard.rank));
-  console.log(ranks.indexOf(previousCard.rank));
-  if (ranks.indexOf(currentCard.rank) < ranks.indexOf(previousCard.rank)) {
-    console.log('p1 scores');
-  } else console.log('p2 turn');
+  // console.log(currentPlayer)
+  if (currentPlayer === '2') {
+    if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
+      score2 = score2 + 1;
+      document.getElementById('p2').textContent = score2;
+      currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+      document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+      // console.log(currentPlayer + ' wins')
+    }
+  } else if (currentPlayer === '1') {
+      if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
+        score1 = score1 + 1;
+        document.getElementById('p1').textContent = score1;
+        currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+        document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+        // console.log(currentPlayer + ' wins')
+      }
+    }
+  if (ranks.indexOf(currentCard.rank) > ranks.indexOf(previousCard.rank)) {
+    currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1';
+    document.getElementById('instruction').textContent = 'Player  ' + currentPlayer + ' please click';
+    console.log(currentPlayer + ' turnxxx');
+  }
 });
-// var dealCard = shuffledDeck.dealDeck()
-// dealCard.displayCard()
 
 },{}]},{},[1]);
