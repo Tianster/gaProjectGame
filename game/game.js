@@ -10,10 +10,6 @@ class Card {
     this.suit = suit
   }
   displayCard () {
-    // var card = document.querySelector('.rank')
-    // card.textContent = this.rank
-    // // document.querySelector('.card').textContent = this.suit
-    // console.log(this.suit)
     document.querySelector('.card').setAttribute('data-suit', this.suit)
     document.querySelector('.card').setAttribute('data-rank', this.rank)
    // document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
@@ -71,7 +67,7 @@ function start (event) {
 }
 function reset (event) {
   var resetGame = event.target
-  if (resetGame.id !== 'colorP1') return
+  if (resetGame.id !== 'colorP2') return
   var dealCard = shuffledDeck.dealDeck()
   dealCard.displayCard()
   currentCard = dealCard
@@ -126,7 +122,7 @@ body.addEventListener('click', event => {
 // Event listener: Direction Lower
 body.addEventListener('click', event => {
   var direction = event.target
-  if (direction.id !== 'lowerP1') return
+  if (direction.id !== 'lowerP2') return
   document.getElementById('openDeck').textContent = document.getElementById('deal').textContent
   var dealCard = shuffledDeck.dealDeck()
   dealCard.displayCard()

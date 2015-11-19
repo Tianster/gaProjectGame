@@ -15,40 +15,33 @@
 .card[data-suit="C"] {
   color: black;
 }
-.card[data-suit="H"]:before {
-  content: '♡';
+.card[data-suit]:before,
+.card[data-suit]:after {
+  position: absolute;
 }
+.card[data-suit]:before {
+  top: 0;
+  left: 0;
+}
+.card[data-suit]:after {
+  bottom: 0;
+  right: 0;
+}
+.card[data-suit="H"]:before,
 .card[data-suit="H"]:after {
   content: '♡';
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
-.card[data-suit="D"]:before {
-  content: '♢';
-}
+.card[data-suit="D"]:before,
 .card[data-suit="D"]:after {
   content: '♢';
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
-.card[data-suit="S"]:before {
-  content: '♠';
-}
+.card[data-suit="S"]:before,
 .card[data-suit="S"]:after {
   content: '♠';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}.card[data-suit="C"]:before {
-  content: '♣';
 }
+.card[data-suit="C"]:before,
 .card[data-suit="C"]:after {
   content: '♣';
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 .rank {
   font-size: 70px;
