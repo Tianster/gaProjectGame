@@ -1,0 +1,56 @@
+.card {
+  display: inline-block;
+  background: white;
+  height: 200px;
+  width: 150px;
+  border-radius: 10px;
+  color: black;
+  position: relative;
+}
+.card[data-suit="D"],
+.card[data-suit="H"] {
+  color: red;
+}
+.card[data-suit="S"],
+.card[data-suit="C"] {
+  color: black;
+}
+.card[data-suit="H"]:before {
+  content: '♡';
+}
+.card[data-suit="H"]:after {
+  content: '♡';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.card[data-suit="D"]:before {
+  content: '♢';
+}
+.card[data-suit="D"]:after {
+  content: '♢';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.card[data-suit="S"]:before {
+  content: '♠';
+}
+.card[data-suit="S"]:after {
+  content: '♠';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}.card[data-suit="C"]:before {
+  content: '♣';
+}
+.card[data-suit="C"]:after {
+  content: '♣';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.rank {
+  font-size: 70px;
+  margin: 20px 50px;
+}

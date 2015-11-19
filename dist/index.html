@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head id="banner">
+  <head>
     <meta charset="utf-8">
     <title>Hit me</title>
     <link rel="stylesheet" href="game.css">
-    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="cards.css">
   </head>
   <body>
-<div class="deckCard" id="mainDeck">Main Deck MD
-  <div id="cardNumberMD">Card Number MD</div>
-  <div id="cardShapeMD">Card Shape MD</div>
+    <div class="banner">Card Game</div>
+    <div class="container">
+      <div class="deckCard" id="deal">
+          <div class="card" data-suit="H" data-rank="A">
+          <div class="rank"></div>
+          </div>
+      </div>
+      <div class="deckCard" id="openDeck"></div>
+    </div>
+<div class="buttonContainer">
+  <div class="containerP1">
+    <div class="buttonBox">
+      <button class="buttons" id="directionP1">Start</button>
+      <button class="buttons" id="colorP1">Reset</button>
+    </div>
+    <div class="buttonBox">
+      <button class="buttons" id="higherP1">higher</button>
+      <button class="buttons" id="lowerP1">lower</button>
+    </div>
+    <div class="buttonBox">
+      <!-- <button class="buttons" id="redP1">red</button>
+      <button class="buttons" id="blackP1">black</button> -->
+    </div>
+  </div>
+  <div class="containerP2">
+    <div class="buttonBox">
+      <!-- <button class="buttons" id="directionP2">direction</button>
+      <button class="buttons" id="colorP2">color</button> -->
+    </div>
+    <div class="buttonBox">
+      <!-- <button class="buttons" id="higherP2">higher</button>
+      <button class="buttons" id="lowerP2">lower</button> -->
+    </div>
+    <div class="buttonBox">
+      <!-- <button class="buttons" id="redP2">red</button>
+      <button class="buttons" id="blackP2">black</button> -->
+    </div>
+  </div>
 </div>
-<div class="deckCard" id="openDeck">Open Deck OD
-  <div id="cardNumberOD">Card Number OD</div>
-  <div id="cardShapeOD">Card Shape OD</div>
+<div class="scoreBoard">
+  <section class="playerScore"id="p1">0</section>
+  <section class="playerScore"id="p2">0</section>
 </div>
-<ul>
-  <button type="button" name="button">Direction</button>
-  <button type="button" name="button">Color</button>
-  <button type="button" name="button">Higher</button>
-  <button type="button" name="button">Lower</button>
-  <button type="button" name="button">Red</button>
-  <button type="button" name="button">Black</button>
-</ul>
-    <section class="playerScore"id="p1">Player 1 Score</section>
-    <section class="playerScore"id="p2">Player 2 Score</section>
+<div id="instruction"></div>
   </body>
-  <script src ="game.js" defer></script>
+  <script src ="game.js"></script>
 </html>
