@@ -1,4 +1,4 @@
-/* @import "cards.css"*/
+
 body {
   background-color: skyblue;
   /*background: url(http://img3.wikia.nocookie.net/__cb20110731053214/potcoplayers/images/b/be/Rotating_gold_dollar_sign.gif);*/
@@ -10,7 +10,7 @@ body {
     color: white;
     background-color: black;
     border: 3px solid white;
-    border-image: url(http://www.clker.com/cliparts/t/K/f/F/X/U/glowing-light-bulb-hi.png) 25% 30% 10% 20% repeat;
+    /*border-image: url(http://www.clker.com/cliparts/t/K/f/F/X/U/glowing-light-bulb-hi.png) 25% 30% 10% 20% repeat;*/
     text-align: center;
 }
 .container {
@@ -26,11 +26,17 @@ body {
 #deal {
   color: white;
   font-size: 25px;
+  /*background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);*/
+  background-size: contain;
+  border-radius: 10px;
 }
 #openDeck {
   display: inline-flex;
   color: white;
   font-size: 25px;
+  background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);
+  background-size: contain;
+  border-radius: 10px;
 }
 .scoreBoard {
   display: flex;

@@ -6,7 +6,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-var suits = ['Black-Spade', 'Red-Heart', 'Club-Black', 'Diamond-Red'];
+var suits = ['S', 'H', 'C', 'D'];
+// document.querySelector('.rank').innerHTML = 'A'
 
 var Card = (function () {
   function Card(rank, suit) {
@@ -19,7 +20,13 @@ var Card = (function () {
   _createClass(Card, [{
     key: 'displayCard',
     value: function displayCard() {
-      document.getElementById('deal').textContent = this.rank + ' ' + this.suit;
+      // var card = document.querySelector('.rank')
+      // card.textContent = this.rank
+      // // document.querySelector('.card').textContent = this.suit
+      // console.log(this.suit)
+      document.querySelector('.card').setAttribute('data-suit', this.suit);
+      document.querySelector('.card').setAttribute('data-rank', this.rank);
+      // document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
     }
   }]);
 
@@ -85,6 +92,7 @@ var body = document.querySelector('body');
 function start(event) {
   var startGame = event.target;
   if (startGame.id !== 'directionP1') return;
+  // document.getElementById('openDeck').backgroundImage = 'url()'
   var dealCard = shuffledDeck.dealDeck();
   dealCard.displayCard();
   currentCard = dealCard;
@@ -104,11 +112,9 @@ function reset(event) {
   document.getElementById('p1').textContent = score1;
   score2 = 0;
   document.getElementById('p2').textContent = score2;
-  console.log(score1 + score2);
   body.removeEventListener('click', reset);
 }
 body.addEventListener('click', start);
-// body.addEventListener('click', reset)
 // Event listener: Direction Higher
 body.addEventListener('click', function (event) {
   var direction = event.target;
