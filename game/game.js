@@ -71,7 +71,9 @@ function reset (event) {
   currentPlayer = '2'
   document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
   score1 = 0
+  document.getElementById('p1').textContent = score1
   score2 = 0
+  document.getElementById('p2').textContent = score2
   console.log(score1 + score2)
   body.removeEventListener('click', reset)
 }
@@ -91,11 +93,8 @@ body.addEventListener('click', event => {
       score2 = score2 + 1
       document.getElementById('p2').textContent = score2
       if (score2 >= 5) {
-        document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!! Press Reset`
-        // if (body.addEventListener('click', reset)) {
-        //   score1 = 0
-        //   score2 = 0
-        // }
+        document.getElementById('instruction').textContent = `Player ${currentPlayer} Wins!!! Press Reset`
+        body.addEventListener('click', reset)
       } else {
         currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
@@ -107,10 +106,7 @@ body.addEventListener('click', event => {
       document.getElementById('p1').textContent = score1
       if (score1 >= 5) {
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!! Press Reset`
-        // if (body.addEventListener('click', reset)) {
-        //   score1 = 0
-        //   score2 = 0
-        // }
+        body.addEventListener('click', reset)
       } else {
         currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
@@ -137,10 +133,7 @@ body.addEventListener('click', event => {
       document.getElementById('p2').textContent = score2
       if (score2 >= 5) {
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!! Press Reset`
-        // if (body.addEventListener('click', reset)) {
-        //   score1 = 0
-        //   score2 = 0
-        // }
+        body.addEventListener('click', reset)
       } else {
         currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
@@ -152,10 +145,7 @@ body.addEventListener('click', event => {
       document.getElementById('p1').textContent = score1
       if (score1 >= 5) {
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} Wins!!! Press Reset`
-        // if (body.addEventListener('click', reset)) {
-        //   score1 = 0
-        //   score2 = 0
-        // }
+        body.addEventListener('click', reset)
       } else {
         currentPlayer === '1' ? currentPlayer = '2' : currentPlayer = '1'
         document.getElementById('instruction').textContent = `Player  ${currentPlayer} please click`
