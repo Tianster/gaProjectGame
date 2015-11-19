@@ -34,7 +34,7 @@ body {
   display: inline-flex;
   color: white;
   font-size: 25px;
-  background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);
+  /*background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);*/
   background-size: contain;
   border-radius: 10px;
 }

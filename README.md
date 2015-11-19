@@ -1,5 +1,6 @@
 # gaProjectGame
 Project Game for GA WDI = Color-me-Up
+[![Travis Build Status](https://img.shields.io/travis/tianster/gaProjectGame.svg)](https://travis-ci.org/tianster/gaProjectGame)
 # Game Des:
 - 2 player-card game with P1 and P2.
 - 1 full deck of 52 cards. (div)
@@ -13,4 +14,4 @@ Project Game for GA WDI = Color-me-Up
 - Deal the next card, and the result is according to either the Color or direction winning logic.
 - Players each will score 1 point for guessing correctly. First to reach 10 will win.
  (Banner)
-- If any player draws a same number, regardless of color, the player automatically loses 2 points. 
+- If any player draws a same number, regardless of color, the player automatically loses 2 points.

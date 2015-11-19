@@ -62,7 +62,6 @@ var body = document.querySelector('body')
 function start (event) {
   var startGame = event.target
   if (startGame.id !== 'directionP1') return
-  // document.getElementById('openDeck').backgroundImage = 'url()'
   var dealCard = shuffledDeck.dealDeck()
   dealCard.displayCard()
   currentCard = dealCard
