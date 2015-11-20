@@ -9,11 +9,14 @@ class Card {
     this.suit = suit
   }
   displayCard () {
-    // document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
     document.querySelector('.card').setAttribute('data-suit', this.suit)
-    // document.querySelector('.cardNum').setAttribute('data-data-cardNum', this.rank)
     document.querySelector('.cardNum').textContent = ''
     document.querySelector('.cardNum').insertAdjacentHTML('beforeend', this.rank)
+  }
+  displayPrevCard () {
+    document.querySelector('.previousCard').setAttribute('data-suit', this.suit)
+    document.querySelector('.cardNumPrev').textContent = ''
+    document.querySelector('.cardNumPrev').insertAdjacentHTML('beforeend', this.rank)
   }
 }
 class Deck {
@@ -85,11 +88,11 @@ body.addEventListener('click', start)
 body.addEventListener('click', event => {
   var direction = event.target
   if (direction.id !== 'higherP1') return
-  document.getElementById('openDeck').textContent = document.getElementById('deal').textContent
   var dealCard = shuffledDeck.dealDeck()
-  dealCard.displayCard()
   previousCard = currentCard
+  previousCard.displayPrevCard()
   currentCard = dealCard
+  currentCard.displayCard()
   if (currentPlayer === '2') {
     if (ranks.indexOf(currentCard.rank) >= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1
@@ -125,11 +128,11 @@ body.addEventListener('click', event => {
 body.addEventListener('click', event => {
   var direction = event.target
   if (direction.id !== 'lowerP2') return
-  document.getElementById('openDeck').textContent = document.getElementById('deal').textContent
   var dealCard = shuffledDeck.dealDeck()
-  dealCard.displayCard()
   previousCard = currentCard
+  previousCard.displayPrevCard()
   currentCard = dealCard
+  currentCard.displayCard()
   if (currentPlayer === '2') {
     if (ranks.indexOf(currentCard.rank) <= ranks.indexOf(previousCard.rank)) {
       score2 = score2 + 1
