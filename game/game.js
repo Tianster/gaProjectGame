@@ -1,18 +1,19 @@
 var ranks = ['2', '3', '4', '5',
             '6', '7', '8', '9', '10',
             'J', 'Q', 'K', 'A']
-var suits = ['S', 'H',
-             'C', 'D']
-// document.querySelector('.rank').innerHTML = 'A'
+var suits = ['S', 'H', 'C', 'D']
+
 class Card {
   constructor (rank, suit) {
     this.rank = rank
     this.suit = suit
   }
   displayCard () {
+    // document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
     document.querySelector('.card').setAttribute('data-suit', this.suit)
-    document.querySelector('.card').setAttribute('data-rank', this.rank)
-   // document.getElementById('deal').textContent = (this.rank + ' ' + this.suit)
+    // document.querySelector('.cardNum').setAttribute('data-data-cardNum', this.rank)
+    document.querySelector('.cardNum').textContent = ''
+    document.querySelector('.cardNum').insertAdjacentHTML('beforeend', this.rank)
   }
 }
 class Deck {
@@ -94,6 +95,7 @@ body.addEventListener('click', event => {
       score2 = score2 + 1
       document.getElementById('p2').textContent = score2
       if (score2 >= 5) {
+        // body.removeEventListener('click', )
         document.getElementById('instruction').textContent = `Player ${currentPlayer} Wins!!! Press Reset`
         body.addEventListener('click', reset)
       } else {
