@@ -2,29 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hit me</title>
+    <title>K.$.K</title>
     <link rel="stylesheet" href="game.css">
     <link rel="stylesheet" href="cards.css">
   </head>
   <body>
-    <div class="banner">Card Game</div>
+    <div class="banner">Keong $aik Ka$ino</div>
     <div class="container">
       <div class="deckCard" id="deal">
-          <div class="card" data-suit="H" data-rank="A">
-          <div class="rank"></div>
+          <div class="card" data-suit="H">
+           <div class="cardNum"></div>
           </div>
       </div>
-      <div class="deckCard" id="openDeck"></div>
+      <div class="deckCard" id="openDeck">
+         <div class="previousCard" data-suit="H">
+          <div class="cardNumPrev"></div>
+         </div>
+      </div>
     </div>
 <div class="buttonContainer">
   <div class="containerP1">
     <div class="buttonBox">
       <button class="buttons" id="directionP1">Start</button>
-      <button class="buttons" id="colorP1">Reset</button>
+      <!-- <button class="buttons" id="colorP1">Reset</button> -->
     </div>
     <div class="buttonBox">
-      <button class="buttons" id="higherP1">higher</button>
-      <button class="buttons" id="lowerP1">lower</button>
+      <button class="buttons" id="higherP1">Higher</button>
+      <!-- <button class="buttons" id="lowerP1">Lower</button> -->
     </div>
     <div class="buttonBox">
       <!-- <button class="buttons" id="redP1">red</button>
@@ -33,12 +37,12 @@
   </div>
   <div class="containerP2">
     <div class="buttonBox">
-      <!-- <button class="buttons" id="directionP2">direction</button>
-      <button class="buttons" id="colorP2">color</button> -->
+      <!-- <button class="buttons" id="directionP2">direction</button> -->
+      <button class="buttons" id="colorP2">Reset</button>
     </div>
     <div class="buttonBox">
-      <!-- <button class="buttons" id="higherP2">higher</button>
-      <button class="buttons" id="lowerP2">lower</button> -->
+      <!-- <button class="buttons" id="higherP2">Higher</button> -->
+      <button class="buttons" id="lowerP2">Lower</button>
     </div>
     <div class="buttonBox">
       <!-- <button class="buttons" id="redP2">red</button>
@@ -47,8 +51,12 @@
   </div>
 </div>
 <div class="scoreBoard">
-  <section class="playerScore"id="p1">0</section>
-  <section class="playerScore"id="p2">0</section>
+  <div class="playerScore" id="p1">0
+      <div class="player"> Player 1</div>
+  </div>
+  <div class="playerScore" id="p2">0
+      <div class="player"> Player 2</div>
+  </div>
 </div>
 <div id="instruction"></div>
   </body>

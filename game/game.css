@@ -1,7 +1,6 @@
 
 body {
-  background-color: skyblue;
-  /*background: url(http://img3.wikia.nocookie.net/__cb20110731053214/potcoplayers/images/b/be/Rotating_gold_dollar_sign.gif);*/
+  background: url(http://www.theme-works.co.uk/images/james-bond-light-frame_piercebrosnan.jpg);
 }
 .banner {
     font-size: 40px;
@@ -9,9 +8,10 @@ body {
     margin: 0 auto;
     color: white;
     background-color: black;
-    border: 3px solid white;
+    border: 1px solid white;
     /*border-image: url(http://www.clker.com/cliparts/t/K/f/F/X/U/glowing-light-bulb-hi.png) 25% 30% 10% 20% repeat;*/
     text-align: center;
+    margin-bottom: 10px
 }
 .container {
   display: flex;
@@ -21,21 +21,20 @@ body {
   width: 150px;
   margin: 0 auto;
   height: 200px;
-  border: 2px solid white;
+  border: 1px solid white;
+  padding: 10px;
+  background-color: white;
 }
 #deal {
   color: white;
   font-size: 25px;
   /*background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);*/
-  background-size: contain;
   border-radius: 10px;
 }
 #openDeck {
   display: inline-flex;
   color: white;
   font-size: 25px;
-  /*background-image: url(http://oss.adm.ntu.edu.sg/ruzana001/wp-content/uploads/sites/14/2014/09/diamond_png_by_doloresdevelde-d4l00lb.png);*/
-  background-size: contain;
   border-radius: 10px;
 }
 .scoreBoard {
@@ -70,22 +69,33 @@ body {
 }
 .buttons {
   width: 80px;
-  height: 30px;
-  font-size: 15px;
-  border-radius: 5px;
+  height: 45px;
+  font-size: 20px;
+  color: gold;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: black;
 }
-#direction, #color, #higher,
+/*#direction, #color, #higher,
 #lower, #red, #black {
   font-size: 15px;
   background-color: green;
   width: 15%;
   height: 25px;
-}
+}*/
 .playerScore {
   width: 20%;
   margin: 0 auto;
   height: 150px;
   border: 2px solid white;
+}
+.player {
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
 }
 #p1 {
   color: grey;
@@ -101,13 +111,12 @@ body {
   font-size: 120px;
   text-align: center;
 }
-#instruction{
-  width: 70%;
+#instruction {
+  background-color: grey;
   height: 50px;
-  margin: 0 auto;
-  border: 2px solid white;
+  margin: 110px 130px;
   font-size: 30px;
-  color: white;
-  background-color: black;
+  color: gold;
+  border-style: groove;
   text-align: center;
 }

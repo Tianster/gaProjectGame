@@ -15,3 +15,7 @@ Project Game for GA WDI = Color-me-Up
 - Players each will score 1 point for guessing correctly. First to reach 10 will win.
  (Banner)
 - If any player draws a same number, regardless of color, the player automatically loses 2 points.
+- O/S issues
+1. Reshuffle card at the end of 52 cards dealt.
+2. Images not linking openDeck and deal Divs
+3. removeEventListener once player reaches 5; only can click on Reset 
